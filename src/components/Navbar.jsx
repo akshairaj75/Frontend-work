@@ -1,11 +1,14 @@
-function Navbar(){
-    return(
+import './Navbar.css'
+function Navbar() {
+    return (
         <>
-            <div style={{ display: 'flex', justifyContent: 'space-between', padding: '10px', backgroundColor: '#2662d9ff', color: 'white' }}>
+            <div className="navbar">
                 <h1>This is navbar</h1>
-                
-
+                <div className="navbar-links">
+                    <a href="/">Sign Up</a>
+                </div>
             </div>
+
         </>
 
     )

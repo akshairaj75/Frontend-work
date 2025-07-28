@@ -9,9 +9,10 @@ function App() {
   return (
     <>
       <Navbar/>
-        <SignUp setUser={setUser}/>
-        <UserCard user={user} />
-      
+        <Routes>
+          <Route path="/" element={<SignUp setUser={setUser} />} />
+          <Route path="/user" element={<UserCard user={user} />} />
+        </Routes>
     </>
   )
 }

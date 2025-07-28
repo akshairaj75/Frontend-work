@@ -1,5 +1,6 @@
 import { useState } from "react"
 import "./SignUp.css";
+import { redirect, useNavigate } from "react-router-dom";
 
 function SignUp({setUser}) {
     const [form, setForm] = useState({
@@ -8,6 +9,7 @@ function SignUp({setUser}) {
         password: ""
     })
     const [submit, setSubmit] = useState(false);
+    const navigate = useNavigate();
 
     const changeInput = (e) => {
         setForm({ ...form, [e.target.name]: e.target.value });
@@ -16,8 +18,10 @@ function SignUp({setUser}) {
         e.preventDefault();
         setUser(form);
         setSubmit(true);
-        console.log("Form submitted:", form);
-    };
+        if (setSubmit) {
+            navigate("/user");
+        }
+};
     return (
         <>
             <div className="sign-up">
